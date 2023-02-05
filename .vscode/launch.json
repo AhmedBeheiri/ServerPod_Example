@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "testserverpod_client",
+            "cwd": "testserverpod_client",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "testserverpod_flutter",
+            "cwd": "testserverpod_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "testserverpod_flutter (profile mode)",
+            "cwd": "testserverpod_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "testserverpod_flutter (release mode)",
+            "cwd": "testserverpod_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "testserverpod_server",
+            "cwd": "testserverpod_server",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

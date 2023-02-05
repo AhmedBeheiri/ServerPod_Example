@@ -1,0 +1,11 @@
+class: Article
+table: articles
+fields:
+  title: String
+  content: String
+  # authorId: int
+  # author: User
+  # comments: List<Comment>
+  created: DateTime
+  updated: DateTime
+  isPrime: bool

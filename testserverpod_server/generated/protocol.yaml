@@ -1,0 +1,8 @@
+articlesEndPoint:
+  - getArticles:
+  - getArticle:
+  - addArticle:
+  - updateArticle:
+  - deleteArticle:
+example:
+  - hello:

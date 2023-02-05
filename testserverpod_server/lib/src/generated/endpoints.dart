@@ -1,0 +1,157 @@
+/* AUTOMATICALLY GENERATED CODE DO NOT MODIFY */
+/*   To generate run: "serverpod generate"    */
+
+// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: public_member_api_docs
+// ignore_for_file: implementation_imports
+
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:serverpod/serverpod.dart' as _i1;
+import '../endpoints/articles_endpoint.dart' as _i2;
+import '../endpoints/example_endpoint.dart' as _i3;
+import 'package:testserverpod_server/src/generated/article_class.dart' as _i4;
+
+class Endpoints extends _i1.EndpointDispatch {
+  @override
+  void initializeEndpoints(_i1.Server server) {
+    var endpoints = <String, _i1.Endpoint>{
+      'articlesEndPoint': _i2.ArticlesEndPoint()
+        ..initialize(
+          server,
+          'articlesEndPoint',
+          null,
+        ),
+      'example': _i3.ExampleEndpoint()
+        ..initialize(
+          server,
+          'example',
+          null,
+        ),
+    };
+    connectors['articlesEndPoint'] = _i1.EndpointConnector(
+      name: 'articlesEndPoint',
+      endpoint: endpoints['articlesEndPoint']!,
+      methodConnectors: {
+        'getArticles': _i1.MethodConnector(
+          name: 'getArticles',
+          params: {
+            'keyWord': _i1.ParameterDescription(
+              name: 'keyWord',
+              type: _i1.getType<String?>(),
+              nullable: true,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['articlesEndPoint'] as _i2.ArticlesEndPoint)
+                  .getArticles(
+            session,
+            keyWord: params['keyWord'],
+          ),
+        ),
+        'getArticle': _i1.MethodConnector(
+          name: 'getArticle',
+          params: {
+            'id': _i1.ParameterDescription(
+              name: 'id',
+              type: _i1.getType<int>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['articlesEndPoint'] as _i2.ArticlesEndPoint)
+                  .getArticle(
+            session,
+            params['id'],
+          ),
+        ),
+        'addArticle': _i1.MethodConnector(
+          name: 'addArticle',
+          params: {
+            'article': _i1.ParameterDescription(
+              name: 'article',
+              type: _i1.getType<_i4.Article>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['articlesEndPoint'] as _i2.ArticlesEndPoint)
+                  .addArticle(
+            session,
+            params['article'],
+          ),
+        ),
+        'updateArticle': _i1.MethodConnector(
+          name: 'updateArticle',
+          params: {
+            'article': _i1.ParameterDescription(
+              name: 'article',
+              type: _i1.getType<_i4.Article>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['articlesEndPoint'] as _i2.ArticlesEndPoint)
+                  .updateArticle(
+            session,
+            params['article'],
+          ),
+        ),
+        'deleteArticle': _i1.MethodConnector(
+          name: 'deleteArticle',
+          params: {
+            'id': _i1.ParameterDescription(
+              name: 'id',
+              type: _i1.getType<int>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['articlesEndPoint'] as _i2.ArticlesEndPoint)
+                  .deleteArticle(
+            session,
+            params['id'],
+          ),
+        ),
+      },
+    );
+    connectors['example'] = _i1.EndpointConnector(
+      name: 'example',
+      endpoint: endpoints['example']!,
+      methodConnectors: {
+        'hello': _i1.MethodConnector(
+          name: 'hello',
+          params: {
+            'name': _i1.ParameterDescription(
+              name: 'name',
+              type: _i1.getType<String>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['example'] as _i3.ExampleEndpoint).hello(
+            session,
+            params['name'],
+          ),
+        )
+      },
+    );
+  }
+}
